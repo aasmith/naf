@@ -6,6 +6,8 @@
 
 naf is not a framework.
 
+You should probably fork this and add some sense to it all.
+
 == FEATURES/PROBLEMS:
 
 * A demo web application that does not use a single over-arching framework.
