@@ -1,14 +1,46 @@
-= demo
+= naf
 
-* FIX (url)
+* http://github.com/aasmith/naf
 
 == DESCRIPTION:
 
-FIX (describe your package)
+naf is not a framework.
 
 == FEATURES/PROBLEMS:
 
-* FIX (list of features or problems)
+* A demo web application that does not use a single over-arching framework.
+
+Inspired by @unclebobmartin's keynote at Ruby Midwest 2011 [1], and the desire
+for decoupling.
+
+There are a few parts, some in a further stage of implementation than others.
+
+DAO: Yes, a Data Access Object. Abstracts the database away. Defines a CRUD
+interface around the marshaling of various objects. Concrete implementations
+can be dead simple (MemoryDao), or simple (RelationalDao).
+
+Business Objects/Models: No inheritance from a class that has a different
+responsbility. Pure business logic lives here.
+
+Services: The layer that pulls things together. Applies authorization, and
+directs a workflow across mutliple models.
+
+Controllers: The web-based frontend to a service. This is the only place the
+internet and its various protocols should be mentioned. Like that one guy in
+Office Space that takes the data from the customer and gives it to the
+engineers. It just passes dumb data back and forth, no more. Controllers take
+in data in various forms and emit JSON.
+
+Views: Some fancy javascript layer that is still TBD. Ember, backbone, etc.
+There may be some kind of schema description exposed [2], to make client
+development less redundant. The goal is to avoid duplication of backend and
+frontend models and validations, etc.
+
+Tying together of various things, like routes for controllers, and decisions
+about which type of DAO to use currently sit in config.ru.
+
+1: http://confreaks.com/videos/759-rubymidwest2011-keynote-architecture-the-lost-years
+2: http://json-schema.org/
 
 == SYNOPSIS:
 
@@ -16,7 +48,8 @@ FIX (describe your package)
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+* Sinatra
+* Sequel if ORMing.
 
 == INSTALL:
 
@@ -35,7 +68,7 @@ and generate the RDoc.
 
 (The MIT License)
 
-Copyright (c) 2012 FIX
+Copyright (c) 2012 Andrew A. Smith
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
