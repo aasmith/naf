@@ -42,6 +42,8 @@ frontend models and validations, etc.
 Tying together of various things, like routes for controllers, and decisions
 about which type of DAO to use currently sit in config.ru.
 
+You should probably fork this and add some sense to it all.
+
 1: http://confreaks.com/videos/759-rubymidwest2011-keynote-architecture-the-lost-years
 2: http://json-schema.org/
 
