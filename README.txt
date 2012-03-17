@@ -6,6 +6,9 @@
 
 naf is not a framework.
 
+(It is also not a Rails app or a Sinatra app (unless you want it to respond to
+things that use HyperText Transfer Protocol).)
+
 == FEATURES/PROBLEMS:
 
 * A demo web application that does not use a single over-arching framework.
@@ -48,7 +51,7 @@ about which type of DAO to use currently sit in config.ru.
 
 == REQUIREMENTS:
 
-* Sinatra
+* Sinatra if interwobbing.
 * Sequel if ORMing.
 
 == INSTALL:
