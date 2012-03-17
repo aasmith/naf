@@ -27,6 +27,7 @@ module Demo
         end.new
 
         service = TokenService.new
+        service.token_store = Storage::HashedTokenStore.new
         service.dao = dao
 
         token = service.authorize("bob", "anything")
